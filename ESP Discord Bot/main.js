@@ -1,6 +1,15 @@
 const Discord = require("discord.js");
 require("dotenv").config();
-const client = new Discord.Client({ partials: ["MESSAGE", "CHANNEL", "REACTION"]});
+const client = new Discord.Client({ 
+    intents: [
+        Discord.DirectMessages,
+        Discord.Guilds,
+        Discord.GuildBans,
+        Discord.GuildMessages,
+        Discord.MessageContent,
+  ],
+    partials: ["MESSAGE", "CHANNEL", "REACTION"]
+});
 const mongoose = require("mongoose");
 
 const fs = require('fs');
